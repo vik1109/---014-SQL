@@ -1,0 +1,13 @@
+SELECT
+	id ,
+	VIEWS,
+	CASE
+		WHEN VIEWS < 100 THEN 3
+		WHEN VIEWS >= 350 THEN 1
+		ELSE 2
+	END AS gr
+FROM
+	stackoverflow.users
+WHERE
+	LOCATION LIKE '%United States%'
+	AND VIEWS > 0
